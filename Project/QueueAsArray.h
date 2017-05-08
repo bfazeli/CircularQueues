@@ -10,13 +10,12 @@ class QueueAsArray
 {
 public:
 	// Declaration default constructor
-
+	QueueAsArray();
 	
 	// Declaration overloaded constructor
-
+	QueueAsArray(int capacity);
 	
 	// Declaration function isEmpty
-
 
 	// Declaration function isFull
 
