@@ -16,30 +16,31 @@ public:
 	QueueAsArray(int capacity);
 	
 	// Declaration function isEmpty
+	bool isEmpty() const;
 
 	// Declaration function isFull
-
+	bool isFull() const;
 
 	// Declaration function front
-
+	int front() const;
 
 	// Declaration function back
-
+	int back() const;
 
 	// Declaration function enqueue
-
+	void enqueue(int value);
 
 	// Declaration function dequeue
-
+	void dequeue();
 
 	// Declaration function size
-
+	int size() const;
 
 	// Declaration function clear
-
+	void clear();
 
 	// Declaration destructor
-
+	~QueueAsArray();
 
 private:
 

@@ -20,29 +20,74 @@ QueueAsArray::QueueAsArray(int capacity)
 
 
 // Definition function isEmpty
-
+bool QueueAsArray::isEmpty() const
+{
+	return queueFront == queueBack;
+}
 
 // Definition function isFull
-
+bool QueueAsArray::isFull() const
+{
+	return size() == maxQueueSize - 1;
+}
 
 // Definition function front
-
+int QueueAsArray::front() const
+{
+	if (!isEmpty())
+		return queueArray[queueFront];
+	cerr << "Queue is empty." << endl;
+	return -999;
+}
 
 // Definition function back
-
+int QueueAsArray::back() const
+{
+	if (size() > 0)
+		return queueArray[queueBack - 1];
+	cerr << "Queue is empty." << endl;
+	return -999;
+}
 
 // Definition function enqueue
+void QueueAsArray::enqueue(int value)
+{
+	if (!isFull())
+	{
+		queueArray[queueBack] = value;
+		queueBack = (queueBack + 1) % maxQueueSize;
+	}
+	else
+	{
+		cerr << "Cannot add to a full queue." << endl;
+	}
+}
 
 
 // Definition function dequeue
-
+void QueueAsArray::dequeue()
+{
+	if (!isEmpty())
+		queueFront = (queueFront + 1) % maxQueueSize;
+	else
+		cerr << "Cannot remove from an empty queue" << endl;
+}
 
 // Declaration function size
-
+int QueueAsArray::size() const
+{
+	return (maxQueueSize - queueFront + queueBack) % maxQueueSize;
+}
 
 // Definition function clear
-
+void QueueAsArray::clear()
+{
+	queueBack = queueFront;
+}
 
 // Definition destructor
-
+QueueAsArray::~QueueAsArray()
+{
+	delete[] queueArray;
+}
 
