@@ -1,3 +1,13 @@
+/*
+	Fazeli, Bijan
+	Lugacio, Marco
+
+	CS A200
+	May 8th, 2017
+
+	Lab 10
+*/
+
 #include "QueueAsArray.h"
 
 // Definition of overloaded assignment operator
