@@ -46,9 +46,6 @@ QueueAsArray::QueueAsArray(const QueueAsArray& otherQueue)
 	queueArray = new int[maxQueueSize];
 
 	queueFront = otherQueue.queueFront;
-	queueBack = queueFront;
-
-	queueFront = otherQueue.queueFront;
 	queueBack = otherQueue.queueBack;
 
 	while (queueFront != queueBack)
