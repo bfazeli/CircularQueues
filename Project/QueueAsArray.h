@@ -12,6 +12,9 @@ public:
 	// Declaration of oveloaded assignment operator
 	QueueAsArray& operator=(const QueueAsArray& rightSide);
 
+	// Declaration of copy constructor
+	QueueAsArray(const QueueAsArray& otherQueue);
+
 	// Declaration default constructor
 	QueueAsArray();
 	

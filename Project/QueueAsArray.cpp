@@ -29,6 +29,25 @@ QueueAsArray& QueueAsArray::operator=(const QueueAsArray& rightSide)
 	return *this;
 }
 
+// Definition of copy constructor
+QueueAsArray::QueueAsArray(const QueueAsArray& otherQueue)
+{
+	maxQueueSize = otherQueue.maxQueueSize;
+	queueArray = new int[maxQueueSize];
+
+	queueFront = otherQueue.queueFront;
+	queueBack = queueFront;
+
+	int front = queueFront, size = otherQueue.size();
+
+	while (size != 0)
+	{
+		enqueue(otherQueue.queueArray[front]);
+		front = (front + 1) % maxQueueSize;
+		--size;
+	}
+}
+
 // Definition default constructor
 QueueAsArray::QueueAsArray()
 {
