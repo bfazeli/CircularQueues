@@ -1,5 +1,34 @@
 #include "QueueAsArray.h"
 
+// Definition of overloaded assignment operator
+QueueAsArray& QueueAsArray::operator=(const QueueAsArray& rightSide)
+{
+	if (&rightSide != this)
+	{
+		if (maxQueueSize != rightSide.maxQueueSize)
+		{
+			delete[] queueArray;	// Release space
+			queueArray = new int[rightSide.maxQueueSize];	//re-create array
+			maxQueueSize = rightSide.maxQueueSize;
+		}
+
+		queueFront = rightSide.queueFront;
+		queueBack = queueFront;
+
+		int front = queueFront, size = rightSide.size();
+
+		while (size != 0)
+		{
+			enqueue(rightSide.queueArray[front]);
+			front = (front + 1) % maxQueueSize;
+			--size;
+		}
+	}
+	else
+		cerr << "Attempted assignment to itself.";
+	return *this;
+}
+
 // Definition default constructor
 QueueAsArray::QueueAsArray()
 {

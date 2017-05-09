@@ -9,6 +9,9 @@ const int MAX_SIZE = 50;
 class QueueAsArray
 {
 public:
+	// Declaration of oveloaded assignment operator
+	QueueAsArray& operator=(const QueueAsArray& rightSide);
+
 	// Declaration default constructor
 	QueueAsArray();
 	
