@@ -1,0 +1,4 @@
+﻿  Main.cpp
+  Main.obj : /DEBUG:FASTLINK is not supported when managed code is present; restarting link with /DEBUG:FULL
+  Project.vcxproj -> \\Mac\Home\Desktop\Coding\OCC\DataStructures\Labs\lab_10_circular_queue\Debug\Project.exe
+  Project.vcxproj -> \\Mac\Home\Desktop\Coding\OCC\DataStructures\Labs\lab_10_circular_queue\Debug\Project.pdb (Partial PDB)

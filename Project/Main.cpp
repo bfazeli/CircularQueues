@@ -7,7 +7,7 @@ using namespace std;
 int main()
 {
 	QueueAsArray intQueue (10);
-
+	
 	cout << "Insert 4 and 5...";
 	intQueue.enqueue(4);
 	intQueue.enqueue(5);
@@ -30,7 +30,6 @@ int main()
 	cout << "\nBack of the queue: " << intQueue.back();
 	cout << "\nNumber of items in the queue: " << intQueue.size();
 	cout << endl;
-
 	cout << "\nPrint out queue elements: ";
 	while(!intQueue.isEmpty())
 	{
@@ -63,7 +62,6 @@ int main()
 	cout << "\nBack of the queue: " << intQueue.back();
 	cout << "\nNumber of items in the queue: " << intQueue.size();
 	cout << endl;
-
 	cout << endl;
 	system("Pause");
 	return 0;
