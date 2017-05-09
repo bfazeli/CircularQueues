@@ -25,14 +25,16 @@ QueueAsArray& QueueAsArray::operator=(const QueueAsArray& rightSide)
 		queueFront = rightSide.queueFront;
 		queueBack = rightSide.queueBack;
 
-		while (queueFront != queueBack)
+		if (queueFront != queueBack)
 		{
+			do
+			{
+				queueArray[queueFront] = rightSide.queueArray[queueFront];
+				queueFront = (queueFront + 1) % maxQueueSize;
+			} while (queueFront != queueBack);
 
-			queueArray[queueFront] = rightSide.queueArray[queueFront];
-			queueFront = (queueFront + 1) % maxQueueSize;
+			queueFront = rightSide.queueFront;
 		}
-
-		queueFront = rightSide.queueFront;
 	}
 	else
 		cerr << "Attempted assignment to itself.";
@@ -48,14 +50,16 @@ QueueAsArray::QueueAsArray(const QueueAsArray& otherQueue)
 	queueFront = otherQueue.queueFront;
 	queueBack = otherQueue.queueBack;
 
-	while (queueFront != queueBack)
+	if (queueFront != queueBack)
 	{
+		do 
+		{
+			queueArray[queueFront] = otherQueue.queueArray[queueFront];
+			queueFront = (queueFront + 1) % maxQueueSize;
+		} while (queueFront != queueBack);
 
-		queueArray[queueFront] = otherQueue.queueArray[queueFront];
-		queueFront = (queueFront + 1) % maxQueueSize;
+		queueFront = otherQueue.queueFront;
 	}
-
-	queueFront = otherQueue.queueFront;
 }
 
 // Definition default constructor
