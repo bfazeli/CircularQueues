@@ -40,7 +40,7 @@ public:
 	void dequeue();
 
 	// Declaration function size
-	int size() const;
+	unsigned int size() const;
 
 	// Declaration function clear
 	void clear();

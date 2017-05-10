@@ -105,8 +105,8 @@ int QueueAsArray::front() const
 // Definition function back
 int QueueAsArray::back() const
 {
-	if (size() > 0)
-		return queueArray[queueBack - 1];
+	if (!isEmpty())
+		return queueArray[(queueBack + maxQueueSize - 1) % maxQueueSize];
 	cerr << "Queue is empty." << endl;
 	return -999;
 }
@@ -136,7 +136,7 @@ void QueueAsArray::dequeue()
 }
 
 // Declaration function size
-int QueueAsArray::size() const
+unsigned int QueueAsArray::size() const
 {
 	return (maxQueueSize - queueFront + queueBack) % maxQueueSize;
 }
